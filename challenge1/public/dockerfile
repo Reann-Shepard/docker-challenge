@@ -1,0 +1,16 @@
+# Use the official Nginx image from the Docker Hub
+FROM nginx:latest
+
+# Copy the contents of the public directory to the Nginx document root
+COPY index.html /usr/share/nginx/html/index.html
+
+# Expose port 80
+EXPOSE 80
+
+# Start Nginx and keep it running in the foreground
+CMD ["nginx", "-g", "daemon off;"]
+
+
+# Sources used:
+#    https://www.freecodecamp.org/news/what-is-docker-used-for-a-docker-container-tutorial-for-beginners/
+#    https://www.freecodecamp.org/news/what-is-docker-learn-how-to-use-containers-with-examples/
